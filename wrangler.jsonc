@@ -1,0 +1,27 @@
+/**
+ * For more details on how to configure Wrangler, refer to:
+ * https://developers.cloudflare.com/workers/wrangler/configuration/
+ */
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "gym-dashboard-api-dev",
+	"main": "src/index.ts",
+	"compatibility_date": "2025-03-03",
+    "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "gymdb",
+          "database_id": "5d885d04-5a58-4d56-bfe6-2844315aa207"
+        }
+    ],
+    "secrets_store_secrets": [
+        {
+            "store_id": "b5ff141311884f05a9fbe9a34854d7e2",
+            "binding": "SECRET",
+            "secret_name": "D1_REST_SECRET"
+        }
+    ],
+	"observability": {
+		"enabled": true
+	}
+}
